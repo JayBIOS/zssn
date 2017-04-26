@@ -15,4 +15,9 @@ RSpec.describe Stack, type: :model do
     stack = build :stack, :unknown
     expect(stack).to_not be_valid
   end
+
+  it 'belongs to an inventory' do
+    stack = build :stack, :unstored
+    expect(stack).to_not be_valid
+  end
 end

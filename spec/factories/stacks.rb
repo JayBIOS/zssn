@@ -2,6 +2,7 @@ FactoryGirl.define do
   factory :stack do
     quantity 1
     item
+    inventory
 
     trait :unquantified do
       quantity nil
@@ -9,6 +10,10 @@ FactoryGirl.define do
 
     trait :unknown do
       item nil
+    end
+
+    trait :unstored do
+      inventory nil
     end
   end
 end
