@@ -6,5 +6,7 @@ class Survivor < ApplicationRecord
 
   enum gender: [:male, :female]
 
-  has_one :inventory
+  has_one :inventory, inverse_of: :survivor
+
+  accepts_nested_attributes_for :inventory
 end
