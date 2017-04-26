@@ -3,6 +3,8 @@
 ## [Unreleased]
 
 ### Added
+* Stack model that represents a stack of items.
+* Item model that represents an item.
 * Use [ActiveModel::Serializer](https://github.com/rails-api/active_model_serializers) for model serialization into JSON.
 * Use [Factory Girl](https://github.com/thoughtbot/factory_girl_rails) as a fixture replacement.
 * Use [RSpec](http://rspec.info/) for unit testing.
