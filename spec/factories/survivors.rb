@@ -22,11 +22,6 @@ FactoryGirl.define do
       gender nil
     end
 
-    trait :hidden do
-      latitude nil
-      longitude nil
-    end
-
     trait :empty_handed do
       after :build do |survivor|
         survivor.inventory = nil
