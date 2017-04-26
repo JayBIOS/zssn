@@ -1,12 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe SurvivorsController, type: :controller do
+
+  before :all do
+    create :item, name: 'Item1'
+    create :item, name: 'Item2'
+  end
+
   let(:valid_data) {
     {
         name: 'Test Survivor',
         age: 20,
         gender: 'male',
-        inventory: 'Water:5,Food:11'
+        last_location: '2.3,1.0',
+        inventory: 'Item1:5,Item2:11'
     }
   }
 
@@ -28,7 +35,7 @@ RSpec.describe SurvivorsController, type: :controller do
 
       it 'returns the registered Survivor' do
         post :create, params: valid_data
-        expect(json['name']).to eq (valid_data[:name])
+        expect(json['name']).to eq valid_data[:name]
       end
 
       it 'registers a new survivor' do
