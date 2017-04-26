@@ -5,7 +5,17 @@ class SurvivorsController < ApplicationController
     if survivor.save
       render json: survivor.to_json, status: :created
     else
-      render json: {error: survivor.errors}, status: :unprocessable_entity
+      render json: { error: survivor.errors }, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    survivor = survivor_service.update
+
+    if survivor.save
+      render json: survivor.to_json, status: :ok
+    else
+      render json: { error: survivor.errors }, status: :unprocessable_entity
     end
   end
 
@@ -16,6 +26,6 @@ class SurvivorsController < ApplicationController
   end
 
   def survivor_params
-    params.permit :name, :age, :gender, :last_location, :inventory
+    params.permit :id, :name, :age, :gender, :last_location, :inventory
   end
 end

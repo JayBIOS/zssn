@@ -7,24 +7,20 @@ RSpec.describe SurvivorsController, type: :controller do
     create :item, name: 'Item2'
   end
 
-  let(:valid_data) {
-    {
-        name: 'Test Survivor',
-        age: 20,
-        gender: 'male',
-        last_location: '2.3,1.0',
-        inventory: 'Item1:5,Item2:11'
-    }
-  }
+  let(:valid_data) do
+    { name: 'Test Survivor',
+      age: 20,
+      gender: 'male',
+      last_location: '2.3,1.0',
+      inventory: 'Item1:5,Item2:11' }
+  end
 
-  let(:invalid_data) {
-    {
-        name: nil,
-        age: nil,
-        gender: 'alien',
-        inventory: nil
-    }
-  }
+  let(:invalid_data) do
+    { name: nil,
+      age: nil,
+      gender: 'alien',
+      inventory: nil }
+  end
 
   describe 'POST #create' do
     context 'with valid data' do
@@ -84,6 +80,24 @@ RSpec.describe SurvivorsController, type: :controller do
           post :create, params: invalid_data
         }.to_not change { Stack.count }
       end
+    end
+  end
+
+  describe 'PUT #update' do
+    let(:survivor) { create :survivor }
+
+    it 'returns http 200 ok' do
+      put :update, params: { id: survivor,
+                             last_location: valid_data[:last_location] }
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'changes a survivor location' do
+      expect do
+        put :update, params: { id: survivor,
+                               last_location: valid_data[:last_location] }
+        survivor.reload
+      end.to change { survivor.latitude }
     end
   end
 end
