@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 ### Added
+* Survivor model that represents a infected or non-infected person.
 * Stack model that represents a stack of items.
 * Item model that represents an item.
 * Use [ActiveModel::Serializer](https://github.com/rails-api/active_model_serializers) for model serialization into JSON.
