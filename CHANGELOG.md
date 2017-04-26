@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 ### Added
+* Inventory model that represents a survivor inventory.
 * Survivor model that represents a infected or non-infected person.
 * Stack model that represents a stack of items.
 * Item model that represents an item.

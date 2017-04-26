@@ -6,6 +6,10 @@ FactoryGirl.define do
     latitude 5.231
     longitude 6.512
 
+    after :build do |survivor|
+      build :inventory, survivor: survivor
+    end
+
     trait :unnamed do
       name nil
     end
@@ -21,6 +25,12 @@ FactoryGirl.define do
     trait :hidden do
       latitude nil
       longitude nil
+    end
+
+    trait :empty_handed do
+      after :build do |survivor|
+        survivor.inventory = nil
+      end
     end
   end
 end

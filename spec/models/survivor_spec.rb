@@ -26,4 +26,9 @@ RSpec.describe Survivor, type: :model do
     survivor = build :survivor, :hidden
     expect(survivor).to_not be_valid
   end
+
+  it 'must have an inventory' do
+    survivor = build :survivor, :empty_handed
+    expect(survivor).to_not be_valid
+  end
 end
