@@ -6,5 +6,7 @@ class Survivor < ApplicationRecord
   validates :latitude, presence: true
   validates :inventory, presence: true
 
+  enum gender: [:male, :female]
+
   has_one :inventory
 end
