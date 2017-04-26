@@ -19,13 +19,26 @@ class SurvivorsController < ApplicationController
     end
   end
 
+  def report
+    survivor = report_service.issue
+    render json: { message: "#{survivor.name} reported as infected" }
+  end
+
   private
 
   def survivor_service
-    SurvivorService.new(survivor_params)
+    SurvivorService.new survivor_params
+  end
+
+  def report_service
+    ReportService.new report_params
   end
 
   def survivor_params
     params.permit :id, :name, :age, :gender, :last_location, :inventory
+  end
+
+  def report_params
+    params.permit :id, :by
   end
 end

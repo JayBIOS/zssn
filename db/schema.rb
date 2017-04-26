@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170426021707) do
+ActiveRecord::Schema.define(version: 20170426205425) do
 
   create_table "inventories", force: :cascade do |t|
     t.integer  "survivor_id"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 20170426021707) do
     t.integer  "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.integer  "infected_id"
+    t.integer  "by_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["by_id"], name: "index_reports_on_by_id"
+    t.index ["infected_id"], name: "index_reports_on_infected_id"
   end
 
   create_table "stacks", force: :cascade do |t|

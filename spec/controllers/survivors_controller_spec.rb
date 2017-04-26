@@ -26,7 +26,7 @@ RSpec.describe SurvivorsController, type: :controller do
     context 'with valid data' do
       it 'returns http 201 created' do
         post :create, params: valid_data
-        expect(response).to have_http_status(:created)
+        expect(response).to have_http_status :created
       end
 
       it 'returns the registered Survivor' do
@@ -89,7 +89,7 @@ RSpec.describe SurvivorsController, type: :controller do
     it 'returns http 200 ok' do
       put :update, params: { id: survivor,
                              last_location: valid_data[:last_location] }
-      expect(response).to have_http_status(:ok)
+      expect(response).to have_http_status :ok
     end
 
     it 'changes a survivor location' do
@@ -98,6 +98,22 @@ RSpec.describe SurvivorsController, type: :controller do
                                last_location: valid_data[:last_location] }
         survivor.reload
       end.to change { survivor.latitude }
+    end
+  end
+
+  describe 'POST #report' do
+    let(:infected) { create :survivor }
+    let(:reporter) { create :survivor }
+
+    it 'returns http 200 ok' do
+      post :report, params: { id: infected, by: reporter }
+      expect(response).to have_http_status :ok
+    end
+
+    it 'creates a report' do
+      expect do
+        post :report, params: { id: infected, by: reporter }
+      end.to change { Report.count }
     end
   end
 end

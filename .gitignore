@@ -38,10 +38,8 @@ bower.json
 .byebug_history
 
 # swap
-[._]*.s[a-v][a-z]
-[._]*.sw[a-p]
-[._]s[a-v][a-z]
-[._]sw[a-p]
+*.swp
+
 # session
 Session.vim
 # temporary

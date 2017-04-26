@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :survivor do
+  factory :survivor, aliases: [:by, :infected] do
     name 'Foo'
     age 20
     gender 'male'
@@ -25,6 +25,13 @@ FactoryGirl.define do
     trait :empty_handed do
       after :build do |survivor|
         survivor.inventory = nil
+      end
+    end
+
+    trait :infected do
+      after :build do |survivor|
+        reports = build_list(:report, 3, infected: survivor)
+        survivor.reports << reports
       end
     end
   end

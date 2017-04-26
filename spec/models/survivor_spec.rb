@@ -22,8 +22,20 @@ RSpec.describe Survivor, type: :model do
     expect(survivor).to_not be_valid
   end
 
+  it 'should not be infected' do
+    survivor = build :survivor
+    expect(survivor.infected?).to be_falsey
+  end
+
   it 'must have an inventory' do
     survivor = build :survivor, :empty_handed
     expect(survivor).to_not be_valid
+  end
+
+  context 'with 3 reports or more' do
+    let(:survivor) { build :survivor, :infected }
+    it 'should be infected' do
+      expect(survivor.infected?).to be_truthy
+    end
   end
 end
