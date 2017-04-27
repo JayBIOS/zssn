@@ -7,7 +7,7 @@ FactoryGirl.define do
     longitude 6.512
 
     after :build do |survivor|
-      build :inventory, :with_stacks, survivor: survivor
+      build :inventory, survivor: survivor
     end
 
     trait :unnamed do
@@ -25,6 +25,12 @@ FactoryGirl.define do
     trait :empty_handed do
       after :build do |survivor|
         survivor.inventory = nil
+      end
+    end
+
+    trait :with_items do
+      after :build do |survivor|
+        build :inventory, :with_stacks, survivor: survivor
       end
     end
 

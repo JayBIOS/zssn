@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :stack do
     quantity 1
-    item Item.first || association(:item)
+    item
     inventory
 
     trait :unquantified do
@@ -15,5 +15,9 @@ FactoryGirl.define do
     trait :unstored do
       inventory nil
     end
+  end
+
+  factory :stack_of_water, parent: :stack do
+    association :item, factory: :water
   end
 end

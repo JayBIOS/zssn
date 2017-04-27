@@ -10,5 +10,10 @@ FactoryGirl.define do
     trait :unvalued do
       value nil
     end
+
+    factory :water, parent: :item do
+      name 'Water'
+      value 4
+    end
   end
 end

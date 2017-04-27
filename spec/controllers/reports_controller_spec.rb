@@ -35,9 +35,10 @@ RSpec.describe ReportsController, type: :controller do
     end
 
     it 'returns the average amount of each kind of Item by survivor' do
-      create :survivor, :infected
+      create :survivor, :with_items
+      create :survivor
       get :average_resource
-      expect(json['average']['Water']).to eq(5)
+      expect(json['average']['Water']).to eq(0.5)
     end
   end
 
@@ -48,7 +49,7 @@ RSpec.describe ReportsController, type: :controller do
     end
 
     it 'returns the number of points lost because of the infected' do
-      create :survivor, :infected
+      create :survivor, :infected, :with_items
       get :points_lost
 
       # Water = 4 points. By default a built Survivor has 5 stacks of water.
