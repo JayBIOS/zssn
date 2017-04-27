@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.0.1] - 2017/04/27
+
+### Changed
+
+* On `/survivor/{id}/report` when reporting the same survivor now returns an error message.
+
 ## [1.0.0] - 2017/04/27
 
 ### Added
@@ -20,4 +26,5 @@
 * Use [RSpec](http://rspec.info/) for unit testing.
 * Init project using [Rails 5.0](http://guides.rubyonrails.org/5_0_release_notes.html).
 
+[1.0.1]: https://github.com/JayBIOS/zssn/releases/tag/v1.0.1
 [1.0.0]: https://github.com/JayBIOS/zssn/releases/tag/v1.0.0

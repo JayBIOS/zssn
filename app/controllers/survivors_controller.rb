@@ -20,8 +20,13 @@ class SurvivorsController < ApplicationController
   end
 
   def report
-    survivor = report_service.issue
-    render json: { message: "#{survivor.name} reported as infected" }
+    issued_report = report_service.issue
+    if issued_report.save
+      survivor = issued_report.infected
+      render json: { message: "#{survivor.name} reported as infected" }
+    else
+      render json: { error: issued_report.errors }, status: :unprocessable_entity
+    end
   end
 
   def trade

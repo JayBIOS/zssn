@@ -5,7 +5,6 @@ class ReportService
   end
 
   def issue
-    Report.create(infected: @infected, by: @by)
-    @infected
+    Report.new(infected: @infected, by: @by)
   end
 end
