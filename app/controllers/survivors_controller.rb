@@ -24,6 +24,11 @@ class SurvivorsController < ApplicationController
     render json: { message: "#{survivor.name} reported as infected" }
   end
 
+  def trade
+    result = trade_service.exchange
+    render json: result
+  end
+
   private
 
   def survivor_service
@@ -34,11 +39,19 @@ class SurvivorsController < ApplicationController
     ReportService.new report_params
   end
 
+  def trade_service
+    TradeService.new trade_params
+  end
+
   def survivor_params
     params.permit :id, :name, :age, :gender, :last_location, :inventory
   end
 
   def report_params
     params.permit :id, :by
+  end
+
+  def trade_params
+    params.permit :id, :buyer, :offer, :pick
   end
 end

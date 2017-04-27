@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 ### Added
+* POST `/survivors/{id}/trade` to trade items between survivors
 * GET `reports/infected` to get the infected percentage.
 * GET `reports/non_infected` to get the healthy percentage.
 * GET `reports/average_resource` to get the average amount of each kind of resource.
