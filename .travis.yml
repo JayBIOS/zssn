@@ -1,0 +1,25 @@
+language: ruby
+
+sudo: false
+
+rvm:
+  - 2.3.1
+
+cache: bundler
+
+script:
+  - "bundle exec rake db:migrate RAILS_ENV=test"
+  - "bundle exec rake db:seed RAILS_ENV=test"
+  - "bundle exec rspec spec"
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: jqgdXvknEJtOco2hjnxDft9VWm2DnDjjJyGNVh8Gq0D90BobjF6RHbpOLVp4WzMDMSIIbuWuWJb7i43Fb+HhGtJIvpIUa9DQe6cH9NXVAH7pKX03+qxfQsaNUm6AlHOxXgLvWPWWX39BGtudTg2ZRiqEEX67zlGfhrtYtWXjtTd3eJrLCjvKfciNujS1JQ33usE/8ZHfKCfgeEwczNzGjnYqwtG0CBmdhRJGG41vm9IFmOQBSS+8bA57Xy82nXE3ZwLOA54vABBaY6M6N9FRy0gUtF0CVElMSXQsdq/WFaKl2XGnH0oxkDHoGLnWz5S/mWFrMYFV5lFyKr2kifYSRNpNI4X2iztnla8xlQhe7ZpVLkl5U4028R9sSfBR6W6ekgFaBY/4uVPlbfnfliuwbaqlrH9uJVwh++GLs2Yo41xacHRzvMVZtc1MN3StupVLpTvpAj4H6fKx/5hpa93j/uVF+6DXrsOvyhxG9XkEqYcgrX7llhKvqo4w6a6irLRtF1QhzldlEEnHLad9Wizk5IcheYGDCDrVK9KgO3mk8uADFAtoWzgj8I2op7m3DPDK9HgZQpxWbcNSRru2BgkiKMxx+d73aZ2o13DwGh37D+u6klF7EvWKNQ+oETwtt9nv86O8cTu5sc6qW7ZKnig0dpCasDTu8hTEsNHQrCL3hMI=
+  app:
+    master: api-zssn
+  on:
+    repo: JayBIOS/zssn
+  run:
+    - "rake db:migrate"
+    - "rake db:seed"

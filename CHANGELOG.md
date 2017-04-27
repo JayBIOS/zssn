@@ -1,6 +1,6 @@
 # Change Log
 
-## [Unreleased]
+## [1.0.0] - 2017/04/27
 
 ### Added
 * POST `/survivors/{id}/trade` to trade items between survivors
@@ -20,4 +20,4 @@
 * Use [RSpec](http://rspec.info/) for unit testing.
 * Init project using [Rails 5.0](http://guides.rubyonrails.org/5_0_release_notes.html).
 
-[Unreleased]: https://github.com/JayBIOS/zssn/commits/master
+[1.0.0]: https://github.com/JayBIOS/zssn/releases/tag/v1.0.0
