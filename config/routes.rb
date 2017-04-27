@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   post '/survivors/:id/trade', to: 'survivors#trade'
   post '/survivors/:id/report', to: 'survivors#report'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: 'about#info'
 end
