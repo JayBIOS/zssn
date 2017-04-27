@@ -7,7 +7,7 @@ class Survivor < ApplicationRecord
   enum gender: [:male, :female]
 
   has_one :inventory, inverse_of: :survivor
-  has_many :reports
+  has_many :reports, foreign_key: 'infected_id'
 
   accepts_nested_attributes_for :inventory
 
