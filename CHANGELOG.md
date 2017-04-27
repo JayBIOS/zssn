@@ -3,7 +3,9 @@
 ## [Unreleased]
 
 ### Added
-* POST `/survivors` endpoint for Survivor registration.
+* POST `/survivors/{id}/report` to report a infected survivor.
+* PUT `/survivors/{id}` endpoint to update a Survivor's location.
+* POST `/survivors` endpoint to register a Survivor.
 * Inventory model that represents a survivor inventory.
 * Survivor model that represents a infected or non-infected person.
 * Stack model that represents a stack of items.
