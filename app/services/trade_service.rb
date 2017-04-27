@@ -11,7 +11,6 @@ class TradeService
     return { error: "You're trying to trade with an infected person. You can't!" } if @dealer.infected?
     return { error: 'You can not afford this exchange!' } unless @buyer.inventory.can_afford? @offer
     return { error: 'Your offer is too expensive!' } unless @dealer.inventory.can_afford? @pick
-
     return { error: 'Not a fair trade!' } unless same_amount?(@offer, @pick)
 
     transfer @dealer, @buyer, @pick
