@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :survivor, aliases: [:by, :infected] do
+  factory :survivor do
     name 'Foo'
     age 20
     gender 'male'
@@ -7,7 +7,7 @@ FactoryGirl.define do
     longitude 6.512
 
     after :build do |survivor|
-      build :inventory, survivor: survivor
+      build :inventory, :with_stacks, survivor: survivor
     end
 
     trait :unnamed do
@@ -29,9 +29,13 @@ FactoryGirl.define do
     end
 
     trait :infected do
-      after :build do |survivor|
-        reports = build_list(:report, 3, infected: survivor)
-        survivor.reports << reports
+      transient do
+        reports_count 3
+      end
+
+      after :build do |survivor, evaluator|
+        survivor.reports << build_list(:report, evaluator.reports_count,
+                                       infected: survivor)
       end
     end
   end

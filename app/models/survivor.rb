@@ -4,7 +4,7 @@ class Survivor < ApplicationRecord
   validates :gender, presence: true
   validates :inventory, presence: true
 
-  enum gender: [:male, :female]
+  enum gender: %i[male female]
 
   has_one :inventory, inverse_of: :survivor
   has_many :reports, foreign_key: 'infected_id'

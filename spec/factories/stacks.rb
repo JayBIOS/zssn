@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :stack do
     quantity 1
-    item
+    item Item.first || association(:item)
     inventory
 
     trait :unquantified do

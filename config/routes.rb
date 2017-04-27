@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  resources :survivors, only: [:create, :update]
+  get 'reports/infected'
+
+  get 'reports/non_infected'
+
+  get 'reports/average_resource'
+
+  get 'reports/points_lost'
+
+  resources :survivors, only: %i[create update]
 
   post '/survivors/report', to: 'survivors#report'
 

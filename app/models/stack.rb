@@ -3,4 +3,8 @@ class Stack < ApplicationRecord
 
   belongs_to :inventory
   belongs_to :item
+
+  def value
+    item.value * quantity
+  end
 end

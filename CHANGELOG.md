@@ -3,8 +3,12 @@
 ## [Unreleased]
 
 ### Added
+* GET `reports/infected` to get the infected percentage.
+* GET `reports/non_infected` to get the healthy percentage.
+* GET `reports/average_resource` to get the average amount of each kind of resource.
+* GET `reports/points_lost` to get the amount of points lost because of the infected.
 * POST `/survivors/{id}/report` to report a infected survivor.
-* PUT `/survivors/{id}` endpoint to update a Survivor's location.
+* PUT `/survivors/{id}` endpoint to update a Survivor`s location.
 * POST `/survivors` endpoint to register a Survivor.
 * Inventory model that represents a survivor inventory.
 * Survivor model that represents a infected or non-infected person.

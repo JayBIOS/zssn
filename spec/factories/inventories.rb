@@ -7,8 +7,8 @@ FactoryGirl.define do
     end
 
     trait :with_stacks do
-      after :create  do |inventory|
-        create_list(:stack, 5, inventory: inventory)
+      after :build do |inventory|
+        inventory.stacks << build_list(:stack, 5, inventory: inventory)
       end
     end
   end

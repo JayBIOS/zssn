@@ -2,17 +2,12 @@ require 'rails_helper'
 
 RSpec.describe SurvivorsController, type: :controller do
 
-  before :all do
-    create :item, name: 'Item1'
-    create :item, name: 'Item2'
-  end
-
   let(:valid_data) do
     { name: 'Test Survivor',
       age: 20,
       gender: 'male',
       last_location: '2.3,1.0',
-      inventory: 'Item1:5,Item2:11' }
+      inventory: 'Water:5,Food:11' }
   end
 
   let(:invalid_data) do

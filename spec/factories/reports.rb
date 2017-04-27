@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :report do
-    infected
-    by
+    association :infected, factory: :survivor
+    association :by, factory: :survivor
 
     trait :with_no_target do
       infected nil
