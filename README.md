@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.org/JayBIOS/zssn.svg?branch=master)](https://travis-ci.org/JayBIOS/zssn)
 
-[**Deployed here**](https://api.zssn.jaybios.me/)
+[**Deployed here**](http://api.zssn.jaybios.me/)
 
 ## Requirements
 
