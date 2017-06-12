@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get 'reports/points_lost'
 
+  resources :items, only: %i[index]
   resources :survivors, only: %i[create update]
 
   post '/survivors/:id/trade', to: 'survivors#trade'
