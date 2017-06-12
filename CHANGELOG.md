@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.0.2] - 2017/06/12
+
+### Added
+
+* [rack-cors](https://github.com/cyu/rack-cors) to enable cross origin AJAX.
+
 ## [1.0.1] - 2017/04/27
 
 ### Changed
@@ -26,5 +32,6 @@
 * Use [RSpec](http://rspec.info/) for unit testing.
 * Init project using [Rails 5.0](http://guides.rubyonrails.org/5_0_release_notes.html).
 
+[1.0.2]: https://github.com/JayBIOS/zssn/releases/tag/v1.0.2
 [1.0.1]: https://github.com/JayBIOS/zssn/releases/tag/v1.0.1
 [1.0.0]: https://github.com/JayBIOS/zssn/releases/tag/v1.0.0

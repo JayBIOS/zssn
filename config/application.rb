@@ -27,6 +27,6 @@ module Zssn
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    config.version = '1.0.1'
+    config.version = '1.0.2'
   end
 end

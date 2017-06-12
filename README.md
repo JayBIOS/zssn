@@ -1,6 +1,6 @@
 # ZSSN (Zombie Survival Social Network)
 
-> Version: 1.0.1
+> Version: 1.0.2
 
 [![Build Status](https://travis-ci.org/JayBIOS/zssn.svg?branch=master)](https://travis-ci.org/JayBIOS/zssn)
 
