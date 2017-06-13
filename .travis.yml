@@ -26,4 +26,3 @@ deploy:
     repo: JayBIOS/zssn
   run:
     - "rake db:migrate"
-    - "rake db:seed"
