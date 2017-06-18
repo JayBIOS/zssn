@@ -11,7 +11,7 @@ RSpec.describe ItemsController, type: :controller do
     it 'returns all registered items' do
       get :index
 
-      expect(json['data'].length).to be 4
+      expect(json.length).to be 4
     end
   end
 

@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    render json: { data: items,
-                   message: 'Retrieved with success' }, status: :ok
+    render json: items.to_json, status: :ok
   end
 
   private

@@ -1,6 +1,6 @@
 # ZSSN (Zombie Survival Social Network)
 
-> Version: 1.1.0
+> Version: 1.2.0
 
 [![Build Status](https://travis-ci.org/JayBIOS/zssn.svg?branch=master)](https://travis-ci.org/JayBIOS/zssn)
 
@@ -14,6 +14,8 @@
 ## Routes
 
 ### Survivors
+
+**GET** `/survivors/` to retrieve all registered survivors.
 
 **POST** `/survivors/` to register a new survivor.
 ```
@@ -32,7 +34,7 @@
 * [last_location] - Latitude and longitude of the last location of the survivor.
 * inventory - Items that this survivor holds.
 
-**PUT** `/survivors/` to update a survivor location.
+**PUT** `/survivors/{id}` to update a survivor location.
 ```
 {
     "last_location": "0.0,0.0"
@@ -64,6 +66,10 @@
 
 * id - Survivor that's going to be reported as infected.
 * by - Survivor that's reporting.
+
+### Items
+
+**GET** `/items/` to retrieve all registered items.
 
 ### Reports
 

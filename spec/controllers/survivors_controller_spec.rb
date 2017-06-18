@@ -17,6 +17,20 @@ RSpec.describe SurvivorsController, type: :controller do
       inventory: nil }
   end
 
+  describe 'GET #index' do
+    it 'returns http 200 success' do
+      get :index
+      expect(response).to have_http_status(:success)
+    end
+
+    it 'returns all registered survivors' do
+      create_list :survivor, 4
+
+      get :index
+      expect(json.length).to be 4
+    end
+  end
+
   describe 'POST #create' do
     context 'with valid data' do
       it 'returns http 201 created' do

@@ -1,4 +1,8 @@
 class SurvivorsController < ApplicationController
+  def index
+    render json: survivors.to_json(methods: :infected?), status: :ok
+  end
+
   def create
     survivor = survivor_service.register
 
@@ -35,6 +39,10 @@ class SurvivorsController < ApplicationController
   end
 
   private
+
+  def survivors
+    Survivor.all
+  end
 
   def survivor_service
     SurvivorService.new survivor_params

@@ -1,10 +1,20 @@
 # Change Log
 
+## [1.2.0] - 2017/06/18
+
+### Added
+
+* GET `/survivors` to retrieve all registered survivors.
+
+### Changed
+
+* GET `/items` json response removed the data and message field.
+
 ## [1.1.0] - 2017/06/12
 
 ### Added
 
-* GET `/items` to retrieve all registered items
+* GET `/items` to retrieve all registered items.
 
 ## [1.0.2] - 2017/06/12
 
@@ -38,6 +48,7 @@
 * Use [RSpec](http://rspec.info/) for unit testing.
 * Init project using [Rails 5.0](http://guides.rubyonrails.org/5_0_release_notes.html).
 
+[1.2.0]: https://github.com/JayBIOS/zssn/releases/tag/v1.2.0
 [1.1.0]: https://github.com/JayBIOS/zssn/releases/tag/v1.1.0
 [1.0.2]: https://github.com/JayBIOS/zssn/releases/tag/v1.0.2
 [1.0.1]: https://github.com/JayBIOS/zssn/releases/tag/v1.0.1
