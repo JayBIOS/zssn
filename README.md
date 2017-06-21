@@ -3,6 +3,7 @@
 > Version: 1.2.0
 
 [![Build Status](https://travis-ci.org/JayBIOS/zssn.svg?branch=master)](https://travis-ci.org/JayBIOS/zssn)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d824142f08024882a0e72769b619c36b)](https://www.codacy.com/app/jonathan-b-d-o-s/zssn?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JayBIOS/zssn&amp;utm_campaign=Badge_Grade)
 
 [**Deployed here**](http://api.zssn.jaybios.me/)
 
